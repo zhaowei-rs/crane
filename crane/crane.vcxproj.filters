@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="layer.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="blob.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="crane.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="net.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="blob.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="layer.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="net.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="headers">
+      <UniqueIdentifier>{e50a853b-af17-4510-9f60-fea0f3b1041e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources">
+      <UniqueIdentifier>{66ce0ea9-b62b-46c9-9599-116394ef2681}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="testers">
+      <UniqueIdentifier>{9dd4c8a9-eea5-4cdc-aa49-6fd2263bc7a3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="kernel.cu">
+      <Filter>sources</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>
