@@ -10,7 +10,21 @@
     <ClCompile Include="crane.cpp">
       <Filter>sources</Filter>
     </ClCompile>
-    <ClCompile Include="net.cpp" />
+    <ClCompile Include="net.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="json11.cpp">
+      <Filter>sources\supports</Filter>
+    </ClCompile>
+    <ClCompile Include="testers\test_json11.cpp">
+      <Filter>testers</Filter>
+    </ClCompile>
+    <ClCompile Include="testers\test_logger.cpp">
+      <Filter>testers</Filter>
+    </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>sources\supports</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blob.h">
@@ -22,10 +36,18 @@
     <ClInclude Include="layer.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="logger.h">
+    <ClInclude Include="net.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="net.h" />
+    <ClInclude Include="logger.h">
+      <Filter>sources\supports</Filter>
+    </ClInclude>
+    <ClInclude Include="testers\test_apis.h">
+      <Filter>testers</Filter>
+    </ClInclude>
+    <ClInclude Include="json11.h">
+      <Filter>sources\supports</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="headers">
@@ -36,6 +58,12 @@
     </Filter>
     <Filter Include="testers">
       <UniqueIdentifier>{9dd4c8a9-eea5-4cdc-aa49-6fd2263bc7a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\layers">
+      <UniqueIdentifier>{28e6f625-0386-4c03-9d78-bb6fce3d7bc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\supports">
+      <UniqueIdentifier>{60c79685-ded1-4dd2-a559-d6f452ffe26a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

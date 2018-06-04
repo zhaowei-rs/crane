@@ -11,7 +11,7 @@ Blob::Blob(const int num, const int channels, const int height, const int width)
 	shape[2] = height;
 	shape[3] = width;
 
-	Reshape(shape);
+	Create(shape);
 
 	return;
 }
@@ -19,7 +19,7 @@ Blob::Blob(const int num, const int channels, const int height, const int width)
 Blob::Blob(const vector<int>& shape) 
 	: capacity_(0)
 {
-	Reshape(shape);
+	Create(shape);
 	return;
 }
 
@@ -31,11 +31,11 @@ void Blob::Reshape(const int num, const int channels, const int height, const in
 	shape[2] = height;
 	shape[3] = width;
 
-	Reshape(shape);
+	Create(shape);
 	return;
 }
 
-void Blob::Reshape(const vector<int>& shape)
+void Blob::Create(const vector<int>& shape)
 {
 	size_ = 1;
 	shape_.resize(shape.size());

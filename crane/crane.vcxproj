@@ -47,7 +47,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -93,15 +93,21 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
   <ItemGroup>
     <ClInclude Include="blob.h" />
     <ClInclude Include="common.h" />
+    <ClInclude Include="json11.h" />
     <ClInclude Include="layer.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="net.h" />
+    <ClInclude Include="testers\test_apis.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="blob.cpp" />
     <ClCompile Include="crane.cpp" />
+    <ClCompile Include="json11.cpp" />
     <ClCompile Include="layer.cpp" />
+    <ClCompile Include="logger.cpp" />
     <ClCompile Include="net.cpp" />
+    <ClCompile Include="testers\test_json11.cpp" />
+    <ClCompile Include="testers\test_logger.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
