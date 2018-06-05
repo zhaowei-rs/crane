@@ -1,5 +1,5 @@
-#ifndef CRANE_NET_H
-#define CRANE_NET_H
+#ifndef CRANE_NET_H_
+#define CRANE_NET_H_
 
 #include "common.h"
 #include "blob.h"
@@ -11,8 +11,17 @@ public:
 	Net();
 	~Net();
 
-	vector<Blob> blobs;
-	vector<Layer> layers;
+	int InitNetByJson(string json_param);
+
+	const vector<Blob*> Forward(float *loss = NULL);
+
+	void Backward();
+
+	void Update();
+
+	string name_;
+	vector<Blob> blobs_;
+	vector<Layer*> layers_;
 };
 
-#endif // !CRANE_NET_H
+#endif // !CRANE_NET_H_

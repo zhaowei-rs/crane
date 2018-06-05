@@ -11,17 +11,17 @@ public:
 	virtual ~Layer();
 
 	// init layer by specific parameters
-	virtual void InitLayer() = 0;
+	virtual void InitLayer();
 
-	// load layer specific parameter from plain param file
+	// load layer specific parameter from json param string
 	// return 0 if success
-	virtual int LoadParam(FILE* fp_param);
+	virtual int InitLayerByJson(string json_param);
 	// load layer specific weight data from model file
 	// return 0 if success
 	virtual int LoadModel(FILE* fp_model_bin);
 
-	virtual void ForwardLayer() = 0;
-	virtual void BackwardLayer() = 0;
+	virtual void ForwardLayer();
+	virtual void BackwardLayer();
 
 	// layer type name
 	string type_;
@@ -34,5 +34,8 @@ public:
 	// blob index which this layer produces as output
 	vector<int> tops_;
 };
+
+#define DEFINE_LAYER_CREATOR(name) \
+    Layer* name##_layer_creator() { return new name; }
 
 #endif // !CRANE_LAYER_H_

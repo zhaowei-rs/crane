@@ -1,0 +1,268 @@
+{
+  "device": "CPU",
+  "epochs": 10,
+  "batch": 128,
+  "channel": 3,
+  "height": 256,
+  "width": 256,
+  "momentum": 0.9,
+  "learning_rate": 0.00001,
+  "weight_decay": 0.0005,
+
+  "weight_filler": "xavier",
+  "bias_filler":  "constant",
+
+  "layers": [
+    {
+      "type": "data",
+      "name": "input",
+      "train_data": "",
+      "valid_data": "",
+      "test_data": "",
+      "tops": [ "data", "label" ]
+    },
+    // block 1
+    {
+      "type": "convolution",
+      "name": "conv1_1",
+      "filters": 64,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "data" ],
+      "tops": [ "conv1_1" ]
+    },
+
+    {
+      "type": "convolution",
+      "name": "conv1_2",
+      "filters": 64,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "conv1_1" ],
+      "tops": [ "conv1_2" ]
+    },
+    {
+      "type": "maxpool",
+      "name": "pool1",
+      "kernel": 2,
+      "stride": 2,
+      "bottoms": [ "conv1_2" ],
+      "tops": [ "pool1" ]
+    },
+    // block 2
+    {
+      "type": "convolution",
+      "name": "conv2_1",
+      "filters": 128,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "pool1" ],
+      "tops": [ "conv2_1" ]
+    },
+
+    {
+      "type": "convolution",
+      "name": "conv2_2",
+      "filters": 128,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "conv2_1" ],
+      "tops": [ "conv2_2" ]
+    },
+    {
+      "type": "maxpool",
+      "name": "pool2",
+      "kernel": 2,
+      "stride": 2,
+      "bottoms": [ "conv2_2" ],
+      "tops": [ "pool2" ]
+    },
+
+    // block3
+    {
+      "type": "convolution",
+      "name": "conv3_1",
+      "filters": 256,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "pool2" ],
+      "tops": [ "conv3_1" ]
+    },
+    {
+      "type": "convolution",
+      "name": "conv3_2",
+      "filters": 256,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "conv3_1" ],
+      "tops": [ "conv3_2" ]
+    },
+    {
+      "type": "convolution",
+      "name": "conv3_3",
+      "filters": 256,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "conv3_2" ],
+      "tops": [ "conv3_3" ]
+    },
+    {
+      "type": "maxpool",
+      "name": "pool3",
+      "kernel": 2,
+      "stride": 2,
+      "bottoms": [ "conv3_3" ],
+      "tops": [ "pool3" ]
+    },
+    // block 4
+    {
+      "type": "convolution",
+      "name": "conv4_1",
+      "filters": 512,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "pool3" ],
+      "tops": [ "conv4_1" ]
+    },
+    {
+      "type": "convolution",
+      "name": "conv4_2",
+      "filters": 512,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "conv4_1" ],
+      "tops": [ "conv4_2" ]
+    },
+    {
+      "type": "convolution",
+      "name": "conv4_3",
+      "filters": 512,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "conv4_2" ],
+      "tops": [ "conv4_3" ]
+    },
+    {
+      "type": "maxpool",
+      "name": "pool4",
+      "kernel": 2,
+      "stride": 2,
+      "bottoms": [ "conv4_3" ],
+      "tops": [ "pool4" ]
+    },
+    // block 5
+    {
+      "type": "convolution",
+      "name": "conv5_1",
+      "filters": 512,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "pool4" ],
+      "tops": [ "conv5_1" ]
+    },
+    {
+      "type": "convolution",
+      "name": "conv5_2",
+      "filters": 512,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "conv5_1" ],
+      "tops": [ "conv5_2" ]
+    },
+    {
+      "type": "convolution",
+      "name": "conv5_3",
+      "filters": 512,
+      "kernel": 3,
+      "stride": 1,
+      "pad": 1,
+      "batch_norm": true,
+      "activation": "relu",
+      "bottoms": [ "conv5_2" ],
+      "tops": [ "conv5_3" ]
+    },
+    {
+      "type": "maxpool",
+      "name": "pool5",
+      "kernel": 2,
+      "stride": 2,
+      "bottoms": [ "conv5_3" ],
+      "tops": [ "pool5" ]
+    },
+    // block 6
+    {
+      "type": "connnected",
+      "name": "fc1",
+      "output": 4096,
+      "activation": "relu",
+      "bottoms": [ "pool5" ],
+      "tops": [ "fc1" ]
+    },
+    {
+      "type": "connnected",
+      "name": "fc2",
+      "output": 4096,
+      "activation": "relu",
+      "bottoms": [ "fc1" ],
+      "tops": [ "fc2" ]
+    },
+    {
+      "type": "connnected",
+      "name": "fc3",
+      "output": 4096,
+      "activation": "relu",
+      "bottoms": [ "fc2" ],
+      "tops": [ "fc3" ]
+    },
+    {
+      "type": "softmax",
+      "name": "sm1",
+      "bottoms": [ "fc3" ],
+      "tops": [ "sm1" ]
+    },
+
+    {
+      "type": "loss",
+      "name": "loss1",
+      "loss_type": "L2",
+      "bottoms": [ "sm1", "label" ],
+      "tops": [ "loss" ]
+    }
+  ]
+}

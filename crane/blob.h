@@ -26,15 +26,15 @@ public:
 	}
 	inline const vector<int>& Shape() const { return shape_; }
 	inline int NumAxes() const { return shape_.size(); }
-	inline int Size() const { return size_; }
-	inline int Size(int start_axis, int end_axis) const {
+	inline size_t Size() const { return size_; }
+	inline size_t Size(int start_axis, int end_axis) const {
 		int size = 1;
 		for (int i = start_axis; i < end_axis; ++i) {
 			size *= shape_[i];
 		}
 		return size;
 	}
-	inline int Size(int start_axis) const {
+	inline size_t Size(int start_axis) const {
 		return Size(start_axis, NumAxes());
 	}
 

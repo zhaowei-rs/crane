@@ -25,6 +25,21 @@
     <ClCompile Include="logger.cpp">
       <Filter>sources\supports</Filter>
     </ClCompile>
+    <ClCompile Include="solver.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="convolution_layer.cpp">
+      <Filter>sources\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="layer_factory.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="maxpool_layer.cpp">
+      <Filter>sources\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="softmax_layer.cpp">
+      <Filter>sources\layers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blob.h">
@@ -48,6 +63,21 @@
     <ClInclude Include="json11.h">
       <Filter>sources\supports</Filter>
     </ClInclude>
+    <ClInclude Include="layer_factory.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="solver.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="convolution_layer.h">
+      <Filter>sources\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="maxpool_layer.h">
+      <Filter>sources\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="softmax_layer.h">
+      <Filter>sources\layers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="headers">
@@ -65,10 +95,5 @@
     <Filter Include="sources\supports">
       <UniqueIdentifier>{60c79685-ded1-4dd2-a559-d6f452ffe26a}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <CudaCompile Include="kernel.cu">
-      <Filter>sources</Filter>
-    </CudaCompile>
   </ItemGroup>
 </Project>

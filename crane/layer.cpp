@@ -9,7 +9,7 @@ Layer::~Layer()
 {
 }
 
-int Layer::LoadParam(FILE* /*fp_param*/)
+int Layer::InitLayerByJson(string /*json_param*/)
 {
 	return 0;
 }
