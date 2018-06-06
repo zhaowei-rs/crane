@@ -10,8 +10,8 @@ public:
 	Layer();
 	virtual ~Layer();
 
-	// init layer by specific parameters
-	virtual void InitLayer();
+	//// init layer by specific parameters
+	//virtual void InitLayer();
 
 	// load layer specific parameter from json param string
 	// return 0 if success
@@ -20,8 +20,8 @@ public:
 	// return 0 if success
 	virtual int LoadModel(FILE* fp_model_bin);
 
-	virtual void ForwardLayer();
-	virtual void BackwardLayer();
+	virtual void ForwardLayer()=0;
+	virtual void BackwardLayer()=0;
 
 	// layer type name
 	string type_;

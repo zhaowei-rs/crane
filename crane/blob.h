@@ -25,7 +25,7 @@ public:
 		return stream.str();
 	}
 	inline const vector<int>& Shape() const { return shape_; }
-	inline int NumAxes() const { return shape_.size(); }
+	inline int NumAxes() const { return int(shape_.size()); }
 	inline size_t Size() const { return size_; }
 	inline size_t Size(int start_axis, int end_axis) const {
 		int size = 1;
