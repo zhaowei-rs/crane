@@ -11,7 +11,7 @@ public:
 	Net();
 	~Net();
 
-	int InitNetByJson(string json_param);
+	int InitNetByJson(json11::Json net_param);
 
 	const vector<Blob*> Forward(float *loss = NULL);
 
@@ -20,8 +20,8 @@ public:
 	void Update();
 
 	string name_;
-	vector<Blob> blobs_;
-	vector<Layer*> layers_;
+	vector<shared_ptr<Blob> > blobs_;
+	vector<shared_ptr<Layer> > layers_;
 };
 
 #endif // !CRANE_NET_H_

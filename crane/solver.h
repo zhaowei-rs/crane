@@ -2,6 +2,7 @@
 #define CRANE_SOLVER_H_
 
 #include "common.h"
+#include "net.h"
 
 enum Phase {
 	TRAIN = 0,
@@ -14,6 +15,9 @@ public:
 	Solver(string solver_file, Phase phase);
 	~Solver();
 
+	void TrainNetwork();
+
+	Phase phase_;
 	string device_;
 	int batch_;
 	int channel_;
@@ -25,6 +29,8 @@ public:
 	float weight_decay_;
 	string weight_filler_;
 	string bias_filler_;
+
+	shared_ptr<Net> net_;
 };
 
 #endif // !CRANE_SOLVER_H_

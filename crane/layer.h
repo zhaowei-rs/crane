@@ -36,6 +36,6 @@ public:
 };
 
 #define DEFINE_LAYER_CREATOR(name) \
-    Layer* name##_layer_creator() { return new name; }
+    shared_ptr<Layer> name##_layer_creator() { return shared_ptr<Layer>(new name); }
 
 #endif // !CRANE_LAYER_H_

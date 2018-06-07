@@ -4,10 +4,10 @@
 #include "layer.h"
 
 // layer factory function
-typedef Layer* (*LayerCreatorFunc)();
+typedef shared_ptr<Layer>(*LayerCreatorFunc)();
 
 // create layer from layer type
-Layer* CreateLayer(string type);
+shared_ptr<Layer> CreateLayer(string type);
 
 #endif // !CRANE_LAYER_FACTORY_H
 
