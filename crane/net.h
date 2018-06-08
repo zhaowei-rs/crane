@@ -20,7 +20,7 @@ public:
 	void Update();
 
 	string name_;
-	vector<shared_ptr<Blob> > blobs_;
+	map<string, shared_ptr<Blob> > blobs_;
 	vector<shared_ptr<Layer> > layers_;
 };
 

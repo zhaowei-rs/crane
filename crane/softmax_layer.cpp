@@ -12,8 +12,9 @@ Softmax::~Softmax()
 
 }
 
-int Softmax::InitLayerByJson(string json_param)
+int Softmax::InitLayerByJson(json11::Json json_param)
 {
+	Layer::InitLayerByJson(json_param);
 	return 0;
 }
 

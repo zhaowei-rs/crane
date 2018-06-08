@@ -15,7 +15,7 @@ public:
 
 	// load layer specific parameter from json param string
 	// return 0 if success
-	virtual int InitLayerByJson(string json_param);
+	int InitLayerByJson(json11::Json json_param);
 	// load layer specific weight data from model file
 	// return 0 if success
 	virtual int LoadModel(FILE* fp_model_bin);
@@ -27,12 +27,11 @@ public:
 	string type_;
 	// layer name
 	string name_;
-	// learnable weights and bias of this layer
-	vector<shared_ptr<Blob> > blobs_;
+
 	// blob index which this layer needs as input
-	vector<int> bottoms_;
+	vector<shared_ptr<Blob> > bottoms_;
 	// blob index which this layer produces as output
-	vector<int> tops_;
+	vector<shared_ptr<Blob> > tops_;
 };
 
 #define DEFINE_LAYER_CREATOR(name) \

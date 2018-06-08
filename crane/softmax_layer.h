@@ -9,7 +9,7 @@ public:
 	Softmax();
 	virtual ~Softmax();
 
-	int InitLayerByJson(string json_param);
+	int InitLayerByJson(json11::Json json_param);
 	int LoadModel(FILE* fp_model_bin);
 	void ForwardLayer();
 	void BackwardLayer();

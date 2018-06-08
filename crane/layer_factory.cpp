@@ -1,5 +1,4 @@
 #include "layer_factory.h"
-#include <map>
 #include "convolution_layer.h"
 #include "maxpool_layer.h"
 #include "softmax_layer.h"

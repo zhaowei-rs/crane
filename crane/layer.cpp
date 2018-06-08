@@ -9,8 +9,10 @@ Layer::~Layer()
 {
 }
 
-int Layer::InitLayerByJson(string /*json_param*/)
+int Layer::InitLayerByJson(json11::Json json_param)
 {
+	type_ = json_param["type"].string_value();
+	name_ = json_param["name"].string_value();
 	return 0;
 }
 
